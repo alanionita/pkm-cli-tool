@@ -21,7 +21,7 @@ Run: `conda env create --file=environment.yaml`
 
 Activate Conda environment
 
-Run: `conda activate note-taking-cli` 
+Run: `conda activate pkm-cli-tool` 
 
 ### Start app
 

@@ -1,4 +1,4 @@
-name: note-taking-cli
+name: pkm-cli-tool
 channels:
   - defaults
 dependencies:
