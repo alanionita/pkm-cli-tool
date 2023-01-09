@@ -1,4 +1,6 @@
 import ulid
+from pprint import pprint
+import frontmatter
 
 def make(title):
     # ---
@@ -21,3 +23,7 @@ def make(title):
         f'updated: {timestamp}\n',
         f'created: {timestamp}\n',
         '---\n']
+
+def print_metadata(note):
+    fm_note = frontmatter.load(note)
+    pprint(fm_note.metadata)
