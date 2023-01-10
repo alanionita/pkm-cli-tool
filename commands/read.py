@@ -1,19 +1,14 @@
 import click
 from datetime import datetime
-from utils import frontmatter
-import os
+from utils import frontmatter, make_note_path
 
-import os
-def open_note_in_vscode(file_name):
-    os.system("code " + file_name)
+def open_note_in_vscode(filename):
+    os.system("code " + filename)
 
-def read_note(file_name):
-    CURR_WORK_DIR = os.getcwd() 
-    NOTES_FILE_PATH = f'{CURR_WORK_DIR}/my_notes' 
-    NOTES_FILE_EXT = '.md'
-    note_path = f'{NOTES_FILE_PATH}/{file_name}{NOTES_FILE_EXT}'
+def read_note(filename):
+    note_path = make_note_path(filename)
     try:
-        note_frontmatter = frontmatter.make(f'{file_name}')
+        note_frontmatter = frontmatter.make(f'{filename}')
         with open(note_path) as f:
             # Adds debugging for frontmatter metadata
             frontmatter.print_metadata(f)

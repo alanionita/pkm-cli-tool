@@ -1,17 +1,12 @@
 import click
 from datetime import datetime
-from utils import frontmatter
-import os
+from utils import frontmatter, make_note_path
 
-import os
-def open_note_in_vscode(file_name):
-    os.system("code " + file_name)
+def open_note_in_vscode(filename):
+    os.system("code " + filename)
 
-def create_note(file_name, file_contents, title):
-    CURR_WORK_DIR = os.getcwd() 
-    NOTES_FILE_PATH = f'{CURR_WORK_DIR}/my_notes' 
-    NOTES_FILE_EXT = '.md'
-    note_path = f'{NOTES_FILE_PATH}/{file_name}{NOTES_FILE_EXT}'
+def create_note(filename, file_contents, title):
+    note_path = make_note_path(filename)
     try:
         note_frontmatter = frontmatter.make(title)
         with open(note_path, 'x') as fp:

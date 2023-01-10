@@ -21,7 +21,7 @@ Run: `conda env create --file=environment.yaml`
 
 Activate Conda environment
 
-Run: `conda activate pkm-cli-tool` 
+Run: ``conda activate pkm-cli-tool`` 
 
 ### Start app
 
