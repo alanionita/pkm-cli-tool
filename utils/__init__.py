@@ -6,3 +6,6 @@ def make_note_path(filename):
     NOTES_FILE_EXT = '.md'
     note_path = f'{NOTES_FILE_PATH}/{filename}{NOTES_FILE_EXT}'
     return note_path
+
+def open_note_in_vscode(filename):
+    os.system("code " + filename)

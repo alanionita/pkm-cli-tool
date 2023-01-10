@@ -1,9 +1,6 @@
 import click
 from datetime import datetime
-from utils import frontmatter, make_note_path
-
-def open_note_in_vscode(filename):
-    os.system("code " + filename)
+from utils import frontmatter, make_note_path, open_note_in_vscode
 
 def read_note(filename):
     note_path = make_note_path(filename)

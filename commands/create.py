@@ -1,9 +1,6 @@
 import click
 from datetime import datetime
-from utils import frontmatter, make_note_path
-
-def open_note_in_vscode(filename):
-    os.system("code " + filename)
+from utils import frontmatter, make_note_path, open_note_in_vscode
 
 def create_note(filename, file_contents, title):
     note_path = make_note_path(filename)
@@ -13,6 +10,7 @@ def create_note(filename, file_contents, title):
             fp.writelines(note_frontmatter)
             fp.write(file_contents)
             fp.close()
+            open_note_in_vscode(note_path)
             pass
 
     except FileExistsError as err: 
