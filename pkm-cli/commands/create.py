@@ -5,6 +5,7 @@ from utils import frontmatter, make_note_path, open_note_in_vscode
 
 def create_note(filename, file_contents, title):
     note_path = make_note_path(filename)
+    print(f'note path ::', note_path)
     try:
         note_frontmatter = frontmatter.make(f'{title}')
         with open(note_path, 'x') as fp:

@@ -1,0 +1,2 @@
+[console_scripts]
+pkm-cli = main:cli

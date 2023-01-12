@@ -26,3 +26,7 @@ Run: ``conda activate pkm-cli-tool``
 ### Start app
 
 Run: `python3 main.py`
+
+### Install
+
+Run: `pip install --editable .`

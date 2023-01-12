@@ -1,7 +1,8 @@
 import os
+import click
 
 def make_note_path(filename):
-    CURR_WORK_DIR = os.getcwd()     
+    CURR_WORK_DIR = os.getcwd() 
     NOTES_FILE_PATH = f'{CURR_WORK_DIR}/my_notes' 
     NOTES_FILE_EXT = '.md'
     note_path = f'{NOTES_FILE_PATH}/{filename}{NOTES_FILE_EXT}'
