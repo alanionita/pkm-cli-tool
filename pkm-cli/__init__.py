@@ -1,3 +1,3 @@
 """
-tiny-pkg : a tine example for standard packaging
+pkm-cli: A simple tool for creating .md notes for various use cases.
 """
