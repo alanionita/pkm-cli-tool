@@ -1,6 +1,6 @@
 import ulid
-from pprint import pprint
 import frontmatter
+from pprint import pprint
 
 def make(title):
     # ---

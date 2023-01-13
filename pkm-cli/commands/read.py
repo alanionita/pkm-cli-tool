@@ -1,20 +1,18 @@
 import click
-from datetime import datetime
-from utils import frontmatter, make_note_path, open_note_in_vscode
+from generators import fm, path
 
 def read_note(filename):
-    note_path = make_note_path(filename)
+    note_path = path.make(filename)
     try:
-        note_frontmatter = frontmatter.make(f'{filename}')
         with open(note_path) as f:
             """
             Adds debugging for frontmatter metadata
             """
-            frontmatter.print_metadata(f)
+            fm.print_metadata(f)
             """
             Open in vscode
             """
-            open_note_in_vscode(note_path)
+            path.open_in(note_path, 'code')
             pass
 
     except BaseException as err:

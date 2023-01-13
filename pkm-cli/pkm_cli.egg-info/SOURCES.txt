@@ -4,12 +4,14 @@ setup.py
 pkm-cli/commands/__init__.py
 pkm-cli/commands/create.py
 pkm-cli/commands/read.py
+pkm-cli/generators/__init__.py
+pkm-cli/generators/file.py
+pkm-cli/generators/fm.py
+pkm-cli/generators/notes.py
+pkm-cli/generators/path.py
 pkm-cli/pkm_cli.egg-info/PKG-INFO
 pkm-cli/pkm_cli.egg-info/SOURCES.txt
 pkm-cli/pkm_cli.egg-info/dependency_links.txt
 pkm-cli/pkm_cli.egg-info/entry_points.txt
 pkm-cli/pkm_cli.egg-info/requires.txt
 pkm-cli/pkm_cli.egg-info/top_level.txt
-pkm-cli/utils/__init__.py
-pkm-cli/utils/frontmatter.py
-pkm-cli/utils/utils.py
