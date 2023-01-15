@@ -24,6 +24,6 @@ def make(title):
         f'created: {timestamp}\n',
         '---\n']
 
-def print_metadata(note):
-    fm_note = frontmatter.load(note)
+def print_metadata(file):
+    fm_note = frontmatter.load(file)
     pprint(fm_note.metadata)

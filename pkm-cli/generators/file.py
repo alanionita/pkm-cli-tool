@@ -4,8 +4,8 @@ from . import path
 def make(file_path, contents, title):
     try:
         with open(file_path, 'x') as file:
-            file.writelines(title)
-            file.write(contents)
+            file.writelines(contents)
+            file.write(title)
             file.close()
             path.open_in(file_path, 'code')
             pass
