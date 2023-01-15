@@ -6,8 +6,8 @@ from commands import read
 def cli():
     pass
 
-cli.add_command(create.cmd_create, name='create')
-cli.add_command(read.cmd_read, name='read')
+cli.add_command(create.cmd, name='create')
+cli.add_command(read.cmd, name='read')
 
 
 if __name__ == '__main__':
