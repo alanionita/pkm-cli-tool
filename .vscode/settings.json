@@ -7,5 +7,5 @@
     "python.analysis.typeCheckingMode": "basic",
     "python.formatting.provider": "autopep8",
     "python.languageServer": "Pylance",
-
+    "python.rep": false
 }

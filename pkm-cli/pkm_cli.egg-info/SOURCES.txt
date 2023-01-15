@@ -7,6 +7,7 @@ pkm-cli/commands/read.py
 pkm-cli/generators/__init__.py
 pkm-cli/generators/file.py
 pkm-cli/generators/fm.py
+pkm-cli/generators/fm_test.py
 pkm-cli/generators/notes.py
 pkm-cli/generators/path.py
 pkm-cli/pkm_cli.egg-info/PKG-INFO

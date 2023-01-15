@@ -30,3 +30,17 @@ Run: `python3 main.py`
 ### Install
 
 Run: `pip install --editable .`
+
+### Testing
+
+```
+pytest
+
+```
+
+To return any output from the functions 
+
+```
+pytest -s
+
+```
