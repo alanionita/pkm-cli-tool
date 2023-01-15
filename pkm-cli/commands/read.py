@@ -20,6 +20,7 @@ def read_note(filename):
 
 @click.command()
 @click.option('--name', '-n', default="daily.2023.01.09", prompt='Enter type of note to read', help='Name of note')
-def cmd_read(name):
+
+def cmd(name):
     click.echo(f'Reading note of type : {name}')
     read_note(name)
