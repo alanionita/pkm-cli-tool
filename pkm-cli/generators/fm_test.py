@@ -1,4 +1,3 @@
-from collections import UserList 
 from typing import List
 import re
 from . import fm
