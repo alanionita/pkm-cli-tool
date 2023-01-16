@@ -1,6 +1,6 @@
 import click
-from commands import create
-from commands import read
+from pkmcli.commands import create
+from pkmcli.commands import read
 
 @click.group(help="CLI tool to manage my notes garden")
 def cli():

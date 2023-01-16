@@ -1,5 +1,5 @@
 import click
-from generators import fm, path
+from pkmcli.generators import fm, path
 
 def read_note(filename):
     note_path = path.make(filename)

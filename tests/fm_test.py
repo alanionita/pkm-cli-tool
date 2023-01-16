@@ -1,7 +1,7 @@
 from typing import List
 import re
 import pytest
-from . import fm
+from pkmcli.generators import fm
 
 def test_make():
     fake_daily_title = '2023-01-15'

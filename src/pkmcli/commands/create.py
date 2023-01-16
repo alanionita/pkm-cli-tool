@@ -1,5 +1,5 @@
 import click
-from generators import notes
+from pkmcli.generators import notes
 
 CMD_NOTE_TYPES = ['daily', 'project', 'area',
                   'resource', 'archive']  # Excludes 'daily'

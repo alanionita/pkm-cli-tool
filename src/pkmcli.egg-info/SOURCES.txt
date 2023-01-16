@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/pkmcli/__init__.py
+src/pkmcli/main.py
+src/pkmcli.egg-info/PKG-INFO
+src/pkmcli.egg-info/SOURCES.txt
+src/pkmcli.egg-info/dependency_links.txt
+src/pkmcli.egg-info/entry_points.txt
+src/pkmcli.egg-info/not-zip-safe
+src/pkmcli.egg-info/requires.txt
+src/pkmcli.egg-info/top_level.txt
