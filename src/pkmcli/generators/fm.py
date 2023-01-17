@@ -1,5 +1,6 @@
 import ulid
-import frontmatter
+import yaml
+import re
 from pprint import pprint
 
 def make(title):
@@ -22,8 +23,11 @@ def make(title):
         'desc: ""\n',
         f'updated: {timestamp}\n',
         f'created: {timestamp}\n',
-        '---\n']
+        '---\n', '\n']
 
 def print_metadata(file):
-    fm_note = frontmatter.load(file)
-    pprint(fm_note.metadata)
+    fm_regex = "^---\n(.*?)\n---"
+    fm_match = re.search(fm_regex, file, re.DOTALL)
+    fm_str = fm_match.group(1) # Only take the first block 
+    fm_note = yaml.safe_load(fm_str)
+    pprint(fm_note)

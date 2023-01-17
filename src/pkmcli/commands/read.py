@@ -8,7 +8,7 @@ def read_note(filename):
             """
             Adds debugging for frontmatter metadata
             """
-            fm.print_metadata(f)
+            fm.print_metadata(f.read())
             """
             Open in vscode
             """
@@ -19,7 +19,7 @@ def read_note(filename):
         click.echo(f"Error [read_note] : Unexpected {err=}, {type(err)=}")
 
 @click.command()
-@click.option('--name', '-n', default="daily.2023.01.09", prompt='Enter type of note to read', help='Name of note')
+@click.option('--name', '-n', default="daily.2023.01.15", prompt='Enter type of note to read', help='Name of note')
 
 def cmd(name):
     click.echo(f'Reading note of type : {name}')
