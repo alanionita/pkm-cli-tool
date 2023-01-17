@@ -2,7 +2,7 @@ import click
 from pkmcli.generators import notes
 
 CMD_NOTE_TYPES = ['daily', 'project', 'area',
-                  'resource', 'archive']  # Excludes 'daily'
+                  'resource', 'archive']
 CMD_PROMPT = 'Enter type of note to create'
 CMD_HELP = 'Type of note'
 CMD_TYPE = click.Choice(CMD_NOTE_TYPES, case_sensitive=False)
