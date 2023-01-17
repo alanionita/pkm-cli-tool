@@ -1,4 +1,4 @@
 click
-frontmatter
-pyyaml
 ulid-py
+pytest
+pyyaml
