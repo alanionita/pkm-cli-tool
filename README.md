@@ -14,6 +14,10 @@ Main use case is daily notes, where the note templates contain specific frontmat
 
 Run: `conda env create --file=environment.yaml`
 
+### Locally install the app
+
+Run: `pip install --editable .`
+
 
 ## Usage
 
@@ -21,17 +25,16 @@ Run: `conda env create --file=environment.yaml`
 
 Activate Conda environment
 
-Run: ``conda activate pkm-cli-tool`` 
+Run: ``conda activate pkm-cli`` 
 
 ### Start app
 
-Run: `python3 main.py`
+Run: `pkmcli`
 
-### Install
+Will return help text for the registered commands
 
-Run: `pip install --editable .`
 
-### Testing
+## Testing
 
 ```
 pytest
