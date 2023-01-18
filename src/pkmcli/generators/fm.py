@@ -3,6 +3,7 @@ import yaml
 import re
 from pprint import pprint
 
+
 def make(title):
     # ---
     # id: 3reyhx4v2qz08p4bwi644c5
@@ -15,19 +16,21 @@ def make(title):
     # ---
     id = ulid.new()
     id_str = str(id)
-    timestamp = id.timestamp().int # international format
+    timestamp = id.timestamp().int  # international format
     return [
-        '---\n', 
-        f'id: {id}\n', 
-        f'title: {title}\n', 
+        '---\n',
+        f'id: {id}\n',
+        f'title: {title}\n',
         'desc: ""\n',
         f'updated: {timestamp}\n',
         f'created: {timestamp}\n',
         '---\n', '\n']
 
+
 def print_metadata(file):
     fm_regex = "^---\n(.*?)\n---"
     fm_match = re.search(fm_regex, file, re.DOTALL)
-    fm_str = fm_match.group(1) # Only take the first block 
-    fm_note = yaml.safe_load(fm_str)
-    pprint(fm_note)
+    if (fm_match):
+        fm_str = fm_match.group(1)  # Only take the first block
+        fm_note = yaml.safe_load(fm_str)
+        pprint(fm_note)
