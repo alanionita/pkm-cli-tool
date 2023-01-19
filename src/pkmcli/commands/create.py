@@ -1,6 +1,7 @@
 import click
 from pkmcli.generators import notes
 from pkmcli.generators.store import pass_store
+from pkmcli.generators import file
 
 CMD_NOTE_TYPES = ['daily', 'project', 'area',
                   'resource', 'archive']
@@ -15,6 +16,18 @@ CMD_DEFAULT = "daily"
 
 @pass_store
 def cmd(notes_store, type, name):
-    click.echo(f'CMD: Creating note of type ::: {type}')
-    notes_location = notes_store.location 
-    notes.make(notes_location, type, name)
+    try:
+        click.echo(f'CMD: Creating note of type ::: {type}')
+        notes_location = notes_store.location 
+        note = notes.make(notes_location, type, name)
+        if (note):
+            fpath = note.get("path")
+            fcontents = note.get("contents")
+            ftitle = note.get("title")
+            if (fpath, fcontents, ftitle):
+                """
+                # Write the file
+                # """
+                file.make(fpath, fcontents, ftitle)
+    except BaseException as err:
+        click.echo(f"Error [cmd.create] : Unexpected {err=}, {type(err)=}")
