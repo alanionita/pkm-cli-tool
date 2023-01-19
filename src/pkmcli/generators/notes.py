@@ -5,11 +5,11 @@ from . import file
 from . import fm
 
 
-def daily():
+def daily(notes_store):
     click.echo('making daily note')
     curr_date = datetime.now()
     note_path = curr_date.strftime('daily.%Y.%m.%d')
-    full_path = path.make(note_path)
+    full_path = path.make(notes_store, note_path)
     title = curr_date.strftime('%Y-%m-%d')
     file_contents = fm.make(title)
     """
@@ -19,7 +19,7 @@ def daily():
     return
 
 
-def other(type, name):
+def other(notes_store, type, name):
     """
     Deriving the path details
     """
@@ -31,7 +31,7 @@ def other(type, name):
     """
     curr_date = datetime.now()
     note_path = curr_date.strftime(f'{type}.{name}')
-    full_path = path.make(note_path)
+    full_path = path.make(notes_store, note_path)
     title = path_last_part
     file_contents = ''
     """
@@ -41,8 +41,8 @@ def other(type, name):
     return
 
 
-def make(type, name):
+def make(notes_store, type, name):
     if (type == 'daily'):
-        daily()
+        daily(notes_store)
     else:
-        other(type, name)
+        other(notes_store, type, name)
