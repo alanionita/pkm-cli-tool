@@ -4,7 +4,7 @@ import re
 from pprint import pprint
 
 
-def make(title):
+def make(title, note_type):
     # ---
     # id: 3reyhx4v2qz08p4bwi644c5
     # title: '2022-10-20'
@@ -15,7 +15,6 @@ def make(title):
     # - journalNote
     # ---
     id = ulid.new()
-    id_str = str(id)
     timestamp = id.timestamp().int  # international format
     return [
         '---\n',
@@ -24,6 +23,7 @@ def make(title):
         'desc: ""\n',
         f'updated: {timestamp}\n',
         f'created: {timestamp}\n',
+        f'type: {note_type}\n'
         '---\n', '\n']
 
 
