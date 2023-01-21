@@ -12,7 +12,7 @@ def daily(notes_store):
     return {
         'path': file_path,
         'contents': contents,
-        'title': title
+        'title': f'# Daily note'
     }
 
 
