@@ -1,6 +1,6 @@
 import click
 from pkmcli.generators import fm, path
-from pkmcli.generators.store import pass_store
+from pkmcli.generators.store import click_get_ctx_location
 
 def read_note(notes_store, filename):
     note_path = path.make(notes_store, filename)
@@ -22,8 +22,7 @@ def read_note(notes_store, filename):
 @click.command()
 @click.option('--name', '-n', default="daily.2023.01.15", prompt='Enter type of note to read', help='Name of note')
 
-@pass_store
-def cmd(notes_store, name):
-    click.echo(f'Reading note of type : {name}')
-    notes_location = notes_store.location 
+def cmd(name):
+    click.echo(f'[read] Reading note of type : {name}')
+    notes_location = click_get_ctx_location 
     read_note(notes_location, name)
