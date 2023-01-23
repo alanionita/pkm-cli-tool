@@ -1,6 +1,6 @@
 import click
 from pkmcli.generators import fm, path
-from pkmcli.generators.store import click_get_ctx_location
+from pkmcli.generators.store import get_location
 
 def read_note(notes_store, filename):
     note_path = path.make(notes_store, filename)
@@ -24,5 +24,5 @@ def read_note(notes_store, filename):
 
 def cmd(name):
     click.echo(f'[read] Reading note of type : {name}')
-    notes_location = click_get_ctx_location 
+    notes_location = get_location() 
     read_note(notes_location, name)

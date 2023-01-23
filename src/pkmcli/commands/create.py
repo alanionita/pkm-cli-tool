@@ -1,6 +1,6 @@
 import click
 from pkmcli.generators import notes
-from pkmcli.generators.store import click_get_ctx_location
+from pkmcli.generators.store import get_location
 from pkmcli.generators import file
 
 CMD_NOTE_TYPES = ['daily', 'project', 'area',
@@ -17,7 +17,7 @@ CMD_DEFAULT = "daily"
 def cmd(type, name):
     try:
         click.echo(f'[create] Creating note of type ::: {type}')
-        notes_location = click_get_ctx_location() 
+        notes_location = get_location() 
         note = notes.make(notes_location, type, name)
         if (note):
             fpath = note.get("path")

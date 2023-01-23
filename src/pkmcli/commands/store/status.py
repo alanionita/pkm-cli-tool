@@ -1,8 +1,8 @@
 import click
-from pkmcli.generators.store import click_get_ctx_location
+from pkmcli.generators.store import get_location
 
 @click.command()
 def cmd():
-    ctx_location = click_get_ctx_location()
+    ctx_location = get_location()
     print(f'[status] Notes Store / location :: {ctx_location}')
 
