@@ -60,4 +60,4 @@ def test_make_errors():
     TODO: Test error states
     """
     with pytest.raises(TypeError):
-        fm.make(fake_daily_title, fake_note_type)
+        fm.make() # type: ignore

@@ -28,10 +28,13 @@ dependencies:
   - zlib=1.2.13=h5eee18b_0
   - pip:
       - attrs==22.2.0
+      - coverage==7.1.0
       - exceptiongroup==1.1.0
       - iniconfig==2.0.0
       - packaging==23.0
       - pkmcli==0.0.1
       - pluggy==1.0.0
       - pytest==7.2.1
+      - pytest-cov==4.0.0
       - tomli==2.0.1
+prefix: /home/notfound/miniconda3/envs/pkmcli
