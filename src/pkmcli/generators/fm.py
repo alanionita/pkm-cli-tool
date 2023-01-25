@@ -4,16 +4,12 @@ import re
 from pprint import pprint
 
 
+"""
+Makes the Frontmatter component of the note
+"""
+
+
 def make(title, note_type):
-    # ---
-    # id: 3reyhx4v2qz08p4bwi644c5
-    # title: '2022-10-20'
-    # desc: ''
-    # updated: 1666288907825
-    # created: 1666288907825
-    # traitIds:
-    # - journalNote
-    # ---
     id = ulid.new()
     timestamp = id.timestamp().int  # international format
     return [
@@ -23,8 +19,13 @@ def make(title, note_type):
         'desc: ""\n',
         f'updated: {timestamp}\n',
         f'created: {timestamp}\n',
-        f'type: {note_type}\n'
+        f'type: {note_type}\n',
         '---\n', '\n']
+
+
+"""
+Pretty prints the Frontmatter metadata
+"""
 
 
 def print_metadata(file):
