@@ -47,3 +47,10 @@ To return any output from the functions
 pytest -s
 
 ```
+
+To output coverage reports
+
+```
+pytest --cov=pkmcli tests/
+
+```
