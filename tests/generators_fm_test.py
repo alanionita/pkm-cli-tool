@@ -6,15 +6,16 @@ from pkmcli.generators import fm
 fake_note_type = 'daily'
 fake_daily_title = '2023-01-15'
 
+
 def test_make():
     output = fm.make(fake_daily_title, fake_note_type)
-    
+
     """
     Test general output shape
     """
 
     assert isinstance(output, List), 'Output should return a List.'
-    
+
     """
     Test each line of the output
     """
@@ -27,7 +28,7 @@ def test_make():
     """
     first_line = output[0]
     second_last_line = output[-2]
-    last_line = output[-1] 
+    last_line = output[-1]
     assert first_line == second_last_line, 'First and last lines should match.'
     expected_pattern = '---\n'
     newline_pattern = '\n'
@@ -41,13 +42,13 @@ def test_make():
     """
     Test contents of the Frontmatter
     """
-    combined_output = ''.join(output);
-    has_id = combined_output.__contains__('id: ');
-    has_title = combined_output.__contains__('title: ');
-    has_desc = combined_output.__contains__('desc: ');
-    has_updated = combined_output.__contains__('updated: ');
-    has_created = combined_output.__contains__('created: ');
-    has_type = combined_output.__contains__('type: ');
+    combined_output = ''.join(output)
+    has_id = combined_output.__contains__('id: ')
+    has_title = combined_output.__contains__('title: ')
+    has_desc = combined_output.__contains__('desc: ')
+    has_updated = combined_output.__contains__('updated: ')
+    has_created = combined_output.__contains__('created: ')
+    has_type = combined_output.__contains__('type: ')
     assert has_id == True, 'Frontmatter should contain an id property'
     assert has_title == True, 'Frontmatter should contain a title property'
     assert has_desc == True, 'Frontmatter should contain a desc property'
@@ -55,9 +56,10 @@ def test_make():
     assert has_created == True, 'Frontmatter should contain an created property'
     assert has_type == True, 'Frontmatter should contain an note type property'
 
-def test_make_errors(): 
+
+def test_make_errors():
     """
     TODO: Test error states
     """
     with pytest.raises(TypeError):
-        fm.make() # type: ignore
+        fm.make()  # type: ignore
