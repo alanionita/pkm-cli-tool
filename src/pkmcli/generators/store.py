@@ -30,8 +30,7 @@ def get_location(ctx_path):
         raise err
 
 
-def set_location(new_location):
-    ctx_path = build_context_path()
+def set_location(ctx_path, new_location):
     context = {}
     try:
         with open(ctx_path, "r") as f:
