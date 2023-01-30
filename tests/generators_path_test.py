@@ -1,5 +1,6 @@
 import os, pytest
-from pkmcli.generators.path import get_project_base, make
+import unittest.mock
+from pkmcli.generators.path import get_project_base, make, open_in
 
 cwd = os.getcwd()   
 def test_get_project_base():
@@ -22,3 +23,10 @@ def test_make():
     assert outcome.__contains__(f'.{test_filename_ext}') == True, 'Path to file should include correct extension.'
 
     assert outcome.__contains__(test_filename) == True, 'Path to file should include correct filename.'
+
+@unittest.mock.patch('os.system')
+def test_open_in(mock_os_system):
+    filename = f'{cwd}/tests/samples/project.test.md'
+    expected_program = 'code'
+    open_in(filename, expected_program);
+    mock_os_system.assert_called_once_with(f'{expected_program} {filename}')
