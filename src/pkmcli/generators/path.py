@@ -14,3 +14,8 @@ def make(notes_store, filename):
 
 def open_in(filename, program):
     os.system(f'{program} {filename}')
+
+def get_project_base():
+    cwd = os.getcwd()
+    base_path = f'{cwd}/src/pkmcli'
+    return base_path
