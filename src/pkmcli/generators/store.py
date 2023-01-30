@@ -17,7 +17,6 @@ def build_context_path(base_path = None, file_name = None):
 
 
 def get_location(ctx_path):
-    # ctx_path = build_context_path() TODO: check that the implementation still works
     try:
         with open(ctx_path, "r") as f:
             context = json.load(f)

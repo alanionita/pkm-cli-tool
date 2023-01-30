@@ -1,6 +1,6 @@
 import click
 from pkmcli.generators import fm, path
-from pkmcli.generators.store import get_location
+from pkmcli.generators.store import get_location, build_context_path
 
 def read_note(notes_store, filename):
     note_path = path.make(notes_store, filename)
@@ -20,9 +20,10 @@ def read_note(notes_store, filename):
         click.echo(f"Error [read_note] : Unexpected {err=}, {type(err)=}")
 
 @click.command()
-@click.option('--name', '-n', default="daily.2023.01.15", prompt='Enter type of note to read', help='Name of note')
+@click.option('--name', '-n', default="daily.2023.01.15", prompt='Enter type of note to read', help='Name of note', required=True)
 
 def cmd(name):
     click.echo(f'[read] Reading note of type : {name}')
-    notes_location = get_location() 
+    ctx_path = build_context_path()
+    notes_location = get_location(ctx_path)
     read_note(notes_location, name)
