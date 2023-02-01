@@ -15,19 +15,16 @@ CMD_DEFAULT = "daily"
 @click.argument("name", required=False)
 
 def cmd(type, name):
-    try:
-        click.echo(f'[create] Creating note of type ::: {type}')
-        ctx_path = build_context_path()
-        notes_location = get_location(ctx_path) 
-        note = notes.make(notes_location, type, name)
-        if (note):
-            fpath = note.get("path")
-            fcontents = note.get("contents")
-            ftitle = note.get("title")
-            if (fpath, fcontents, ftitle):
-                """
-                # Write the file
-                # """
-                file.make(fpath, fcontents, ftitle)
-    except BaseException as err:
-        click.echo(f"Error [cmd.create] : Unexpected {err=}, {type(err)=}")
+    click.echo(f'[create] Creating note of type ::: {type}')
+    ctx_path = build_context_path()
+    notes_location = get_location(ctx_path) 
+    note = notes.make(notes_location, type, name)
+    if (note):
+        fpath = note.get("path")
+        fcontents = note.get("contents")
+        ftitle = note.get("title")
+        if (fpath, fcontents, ftitle):
+            """
+            # Write the file
+            # """
+            file.make(fpath, fcontents, ftitle)
