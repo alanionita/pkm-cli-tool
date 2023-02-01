@@ -1,11 +1,11 @@
-from datetime import datetime
+import datetime
 from . import path
 from . import fm
 
 
 def daily(notes_store):
     NOTE_TYPE = 'daily'
-    curr_date = datetime.now()
+    curr_date = datetime.datetime.now()
     note_file_name = curr_date.strftime('daily.%Y.%m.%d')
     file_path = path.make(notes_store, note_file_name)
     title = curr_date.strftime('%Y-%m-%d')
@@ -26,7 +26,7 @@ def other(notes_store, note_type, name):
     """
     Creating note content
     """
-    curr_date = datetime.now()
+    curr_date = datetime.datetime.now()
     note_path = curr_date.strftime(f'{note_type}.{name}')
     file_path = path.make(notes_store, note_path)
     title = path_last_part.title()
