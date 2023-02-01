@@ -14,6 +14,8 @@ def make(file_path, contents, title):
         click.echo(
             f'Error [file.make] : Creation skipped, file [{title}] already exists. Opening file ...')
         path.open_in(file_path, 'code')
+        raise err
 
     except BaseException as err:
         click.echo(f"Error [file.make] : Unexpected {err=}, {type(err)=}")
+        raise err
