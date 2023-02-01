@@ -8,6 +8,7 @@ from pkmcli.generators.store import get_location, set_location, build_context_pa
 def cmd(location):
     ctx_path = build_context_path()
     ctx_location = get_location(ctx_path)
-    print('[changelocation] Notes Store / old location ::', ctx_location)
+    click.echo(f'[store / change] Notes Store / old location ::')
+    click.echo(ctx_location)
     set_location(ctx_path,location)
     click.get_current_context().invoke(status.cmd)
