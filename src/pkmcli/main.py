@@ -1,8 +1,6 @@
 import click
-from pkmcli.commands import create
-from pkmcli.commands import read
-from pkmcli.commands.store import status
-from pkmcli.commands.store import change
+from pkmcli.commands import create, read, init
+from pkmcli.commands.store import status, change
 
 @click.group(help="CLI tool to manage my notes garden")
 def cli():
@@ -15,6 +13,7 @@ def store():
 
 cli.add_command(create.cmd, name='create')
 cli.add_command(read.cmd, name='read')
+cli.add_command(init.cmd, name='init')
 
 store.add_command(change.cmd, name='change')
 store.add_command(status.cmd, name='status')
