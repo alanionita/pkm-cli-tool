@@ -42,4 +42,4 @@ jobs:
           pip3 install .
       - name: Test with pytest
         run: |
-          $CONDA/bin/pytest
+          pytest
