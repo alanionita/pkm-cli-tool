@@ -42,7 +42,7 @@ jobs:
       
       - name: Install locally
         run: |
-          pip3 install .
+          pip install --editable .
 
       - name: Test with pytest
         run: |
