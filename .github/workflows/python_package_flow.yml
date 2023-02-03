@@ -43,7 +43,7 @@ jobs:
       - name: Install locally
         run: |
           pip3 install .
-          
+
       - name: Test with pytest
         run: |
-          pytest
+          python -m pytest
