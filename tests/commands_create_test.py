@@ -1,6 +1,6 @@
 from click.testing import CliRunner
 from pkmcli import main
-from pkmcli.commands import create
+from pkmcli.generators.path import get_project_base
 import unittest.mock
 import datetime
 import pytest
@@ -18,6 +18,11 @@ def get_store():
 
 @pytest.fixture(scope="session", autouse=True)
 def before_all():
+    store_status_res = runner.invoke(main.cli, ['store', 'status'])
+    if (store_status_res.exit_code == 1):
+        proj_base = get_project_base()
+        runner.invoke(main.cli, ['init', '--store', f'{proj_base}/tests/samples/notes'])
+        
     store_path = get_store()
     test_project_path = f'{store_path}/project.{mock_project_name}.md'
     if (os.path.exists(test_project_path)):

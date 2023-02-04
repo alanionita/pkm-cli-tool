@@ -46,7 +46,7 @@ def set_location(ctx_path, new_location):
 
 def make_context(store=None) -> None:
     cwd = get_project_base()
-    ctx_path = build_context_path(None, 'context')
+    ctx_path = build_context_path(store, 'context') if store else build_context_path(None, 'context')
     try:
         with open(ctx_path, 'x') as file:
             file.writelines('{"notes_location": ""}')
@@ -55,7 +55,6 @@ def make_context(store=None) -> None:
                 set_location(ctx_path, store)
             else:
                 set_location(ctx_path, f'{cwd}/notes_store')
-
     except FileExistsError as err:
         click.echo(
             f'Error [store.make_context] : Creation skipped, file [context.json] already exists.')

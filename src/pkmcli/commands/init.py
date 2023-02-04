@@ -7,5 +7,6 @@ from pkmcli.generators.store import get_location, make_context
 
 def cmd(store):
     click.echo(f'[init] Creating store...')
+    if store: click.echo(f'[init] With store :: {store}')
     make_context(store)
  
