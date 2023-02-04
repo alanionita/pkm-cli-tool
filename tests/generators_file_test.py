@@ -3,20 +3,21 @@ import unittest.mock
 from pkmcli.generators import file
 from pkmcli.generators import notes
 from pkmcli.generators.store import get_location
-from generators_store_test import make_test_ctx_path
+from generators_store_test import make_test_store_path
 
 @pytest.fixture(scope="session", autouse=True)
 def before_all():
     cwd = os.getcwd()
     fpath = f'{cwd}/tests/samples/notes/project.test.pytest.md'
-    os.remove(fpath)
+    if (os.path.exists(fpath)):
+        os.remove(fpath)
 
 def make_test_file():
     test_name = 'test.pytest'  # 30th February to make it stand out
-    ctx_filename = 'contextSamples'
-    ctx_path = make_test_ctx_path(ctx_filename)
-    notes_location = get_location(ctx_path)
-    note = notes.make(notes_location, 'project', test_name)
+    # ctx_filename = 'context'
+    ctx_path = make_test_store_path()
+    print(f'notes_location :: {ctx_path}')
+    note = notes.make(ctx_path, 'project', test_name)
     fpath = note.get("path")
     fcontents = note.get("contents")
     ftitle = note.get("title")

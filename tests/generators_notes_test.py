@@ -5,7 +5,7 @@ from pkmcli.generators.store import get_location
 from generators_store_test import make_test_ctx_path
 
 def test_other():
-    ctx_path = make_test_ctx_path('contextSamples')
+    ctx_path = make_test_ctx_path('context')
     notes_location = get_location(ctx_path)
     test_name = 'notes-test'
     test_type = 'resource'
@@ -50,7 +50,7 @@ def test_other():
             if has_type: assert has_type == True, 'Note contents should include a type value'
 
 def test_daily():
-    ctx_path = make_test_ctx_path('contextSamples')
+    ctx_path = make_test_ctx_path('context')
     notes_location = get_location(ctx_path)
     test_name = 'notes-test'
     test_type = 'daily'
