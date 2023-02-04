@@ -14,7 +14,6 @@ def before_all():
 
 def make_test_file():
     test_name = 'test.pytest'  # 30th February to make it stand out
-    # ctx_filename = 'context'
     ctx_path = make_test_store_path()
     print(f'notes_location :: {ctx_path}')
     note = notes.make(ctx_path, 'project', test_name)

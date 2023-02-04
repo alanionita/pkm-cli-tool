@@ -20,7 +20,8 @@ def before_all():
         test_path = make_test_path()
         test_ctx = f'{test_path}/context.json'
         ctx_path = build_context_path(None, 'context')
-        os.remove(test_ctx)
+        if (os.path.exists(test_ctx)):
+            os.remove(test_ctx)
         if (os.path.exists(ctx_path)):
             os.remove(ctx_path)
 
