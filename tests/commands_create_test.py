@@ -5,6 +5,7 @@ import unittest.mock
 import datetime
 import pytest
 import os
+import click
 
 runner = CliRunner()
 mock_datetime = unittest.mock.Mock()
@@ -16,13 +17,13 @@ def get_store():
     store_path = store_status_res.output.split('\n')[-2]
     return store_path
 
-@pytest.fixture(scope="session", autouse=True)
-def before_all():
-    store_status_res = runner.invoke(main.cli, ['store', 'status'])
-    if (store_status_res.exit_code == 1):
-        runner.invoke(main.cli, ['init'])
-        
-    store_path = get_store()
+def cleanup_test_files():
+    """
+    Cleans up any files create by this test suite
+    """
+    
+    store_path = get_store()    
+    click.echo(f'[tests/create:beforeAll] store_path :: {store_path}')
     test_project_path = f'{store_path}/project.{mock_project_name}.md'
     if (os.path.exists(test_project_path)):
         os.remove(test_project_path)
@@ -32,6 +33,17 @@ def before_all():
         test_daily_path = f'{store_path}/{daily_fname}.md'
         if (os.path.exists(test_daily_path)):
             os.remove(test_daily_path)
+
+
+@pytest.fixture(scope="session", autouse=True)
+def before_all():
+    store_status_res = runner.invoke(main.cli, ['store', 'status'])
+    # if (store_status_res.exit_code == 1):
+    click.echo(f'[tests/create:beforeAll] store_status_res :: {store_status_res}')
+    cleanup_test_files()
+    runner.invoke(main.cli, ['init'])
+
+    
 
 def test_create_daily():
     with unittest.mock.patch('datetime.datetime', mock_datetime):

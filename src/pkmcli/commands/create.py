@@ -17,7 +17,9 @@ CMD_DEFAULT = "daily"
 def cmd(type, name):
     click.echo(f'[create] Creating note of type ::: {type}')
     ctx_path = build_context_path()
+    click.echo(f'[cmd/create] ctx_path :: {ctx_path}')
     notes_location = get_location(ctx_path) 
+    click.echo(f'[cmd/create] notes_location :: {notes_location}')
     note = notes.make(notes_location, type, name)
     if (note):
         fpath = note.get("path")
