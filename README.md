@@ -6,6 +6,9 @@ Main use case is daily notes, where the note templates contain specific frontmat
 
 https://github.com/alanionita/pkm-cli-tool/actions/workflows/python_package_flow.yml/badge.svg
 
+![pipeline-badge](https://github.com/alanionita/pkm-cli-tool/actions/workflows/python_package_flow.yml/badge.svg)
+
+
 ## Install
 
 ### Pre-requisite
