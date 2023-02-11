@@ -20,8 +20,7 @@ def get_store():
 def before_all():
     store_status_res = runner.invoke(main.cli, ['store', 'status'])
     if (store_status_res.exit_code == 1):
-        proj_base = get_project_base()
-        runner.invoke(main.cli, ['init', '--store', f'{proj_base}/tests/samples/notes'])
+        runner.invoke(main.cli, ['init'])
         
     store_path = get_store()
     test_project_path = f'{store_path}/project.{mock_project_name}.md'
