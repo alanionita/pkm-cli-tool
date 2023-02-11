@@ -16,14 +16,7 @@ jobs:
         shell: bash -l {0}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-        with: 
-          persist-credentials: false
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        if: ${{ failure() }}
-        with:
-          limit-access-to-actor: true
+        uses: actions/checkout@v3
       - name: Set up Python
         run: |
           sudo apt-get install python3
@@ -53,3 +46,9 @@ jobs:
         shell: bash -l {0}
         run: |
           pytest -s
+          
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: ${{ failure() }}
+        with:
+          limit-access-to-actor: true
