@@ -40,8 +40,8 @@ def before_all():
     store_status_res = runner.invoke(main.cli, ['store', 'status'])
     # if (store_status_res.exit_code == 1):
     click.echo(f'[tests/create:beforeAll] store_status_res :: {store_status_res}')
-    cleanup_test_files()
     runner.invoke(main.cli, ['init'])
+    cleanup_test_files()
 
     
 
