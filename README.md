@@ -9,7 +9,17 @@ https://github.com/alanionita/pkm-cli-tool/actions/workflows/python_package_flow
 ![pipeline-badge](https://github.com/alanionita/pkm-cli-tool/actions/workflows/python_package_flow.yml/badge.svg)
 
 
-## Install
+## Install 
+
+Deployed to TestPyPi - https://test.pypi.org/project/paperclip/0.0.1/
+
+Run 
+
+```python
+pip install -i https://test.pypi.org/simple/ paperclip==0.0.1
+```
+
+## Dev Install
 
 ### Pre-requisite
 
@@ -59,3 +69,13 @@ To output coverage reports
 pytest --cov=pkmcli tests/
 
 ```
+
+## Building
+
+Building the archives of this package is done by:
+
+1. Activating the `conda` environment
+
+2. Running the `buildScript.sh`
+
+Build artefacts are created and placed in the `dist/` folder.
