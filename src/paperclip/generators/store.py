@@ -1,7 +1,7 @@
 import click
 import json
 import os
-from pkmcli.generators.path import get_project_base
+from paperclip.generators.path import get_project_base
 
 NOTES_LOCATION = 'notes_location'
 

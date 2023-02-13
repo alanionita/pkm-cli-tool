@@ -1,8 +1,8 @@
 import pytest, os
 import unittest.mock
-from pkmcli.generators import file
-from pkmcli.generators import notes
-from pkmcli.generators.store import get_location
+from paperclip.generators import file
+from paperclip.generators import notes
+from paperclip.generators.store import get_location
 from generators_store_test import make_test_store_path
 
 @pytest.fixture(scope="session", autouse=True)

@@ -1,6 +1,6 @@
 import click
-from pkmcli.generators import fm, path
-from pkmcli.generators.store import get_location, build_context_path
+from paperclip.generators import fm, path
+from paperclip.generators.store import get_location, build_context_path
 
 def read_note(notes_store, filename):
     note_path = path.make(notes_store, filename)

@@ -1,8 +1,8 @@
 from click.testing import CliRunner
-from pkmcli import main
+from paperclip import main
 import unittest.mock
 import datetime, os, pytest
-from pkmcli.generators.store import build_context_path, get_project_base
+from paperclip.generators.store import build_context_path, get_project_base
 
 runner = CliRunner()
 mock_datetime = unittest.mock.Mock()

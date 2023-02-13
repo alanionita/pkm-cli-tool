@@ -10,5 +10,5 @@ def open_in(filename, program):
 
 def get_project_base():
     cwd = os.getcwd()
-    base_path = f'{cwd}/src/pkmcli'
+    base_path = f'{cwd}/src/paperclip'
     return base_path

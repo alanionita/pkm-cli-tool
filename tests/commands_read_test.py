@@ -1,5 +1,5 @@
 from click.testing import CliRunner
-from pkmcli import main
+from paperclip import main
 import unittest.mock
 import datetime
 

@@ -1,7 +1,7 @@
 import re, datetime
 import unittest.mock
-from pkmcli.generators import notes
-from pkmcli.generators.store import get_location
+from paperclip.generators import notes
+from paperclip.generators.store import get_location
 from generators_store_test import make_test_ctx_path
 
 def test_other():

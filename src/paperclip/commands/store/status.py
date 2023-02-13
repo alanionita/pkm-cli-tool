@@ -1,5 +1,5 @@
 import click, os
-from pkmcli.generators.store import get_location, build_context_path
+from paperclip.generators.store import get_location, build_context_path
 
 @click.command()
 def cmd():

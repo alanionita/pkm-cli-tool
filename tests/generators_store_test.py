@@ -1,5 +1,5 @@
 import os, pytest
-from pkmcli.generators.store import get_location, set_location, build_context_path
+from paperclip.generators.store import get_location, set_location, build_context_path
 
 cwd = os.getcwd()
 

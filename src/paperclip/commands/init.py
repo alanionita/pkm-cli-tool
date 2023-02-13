@@ -1,6 +1,6 @@
 import click
-from pkmcli.generators import file
-from pkmcli.generators.store import make_context
+from paperclip.generators import file
+from paperclip.generators.store import make_context
 
 @click.command()
 @click.option('--store', '-s', help='Name of store', required=False)

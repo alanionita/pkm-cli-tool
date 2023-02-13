@@ -1,15 +1,15 @@
 import os, pytest
 import unittest.mock
-from pkmcli.generators.path import get_project_base, make, open_in
+from paperclip.generators.path import get_project_base, make, open_in
 
 cwd = os.getcwd()   
 def test_get_project_base():
     outcome = get_project_base()
-    expected = f'{cwd}/src/pkmcli'
+    expected = f'{cwd}/src/paperclip'
 
     assert expected == outcome, 'Should return the correct project base'
 
-    assert outcome.__contains__('pkmcli') == True, 'Base project base should include the project name'
+    assert outcome.__contains__('paperclip') == True, 'Base project base should include the project name'
 
 def test_make():
     test_base_path = cwd

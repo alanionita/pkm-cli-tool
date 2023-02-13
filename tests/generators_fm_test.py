@@ -1,7 +1,7 @@
 from typing import List
 import re
 import pytest
-from pkmcli.generators import fm
+from paperclip.generators import fm
 
 fake_note_type = 'daily'
 fake_daily_title = '2023-01-15'

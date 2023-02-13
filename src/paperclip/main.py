@@ -1,6 +1,6 @@
 import click
-from pkmcli.commands import create, read, init
-from pkmcli.commands.store import status, change
+from paperclip.commands import create, read, init
+from paperclip.commands.store import status, change
 
 @click.group(help="CLI tool to manage my notes garden")
 def cli():

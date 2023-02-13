@@ -1,7 +1,7 @@
 import click
 import os
-from pkmcli.commands.store import status
-from pkmcli.generators.store import get_location, set_location, build_context_path
+from paperclip.commands.store import status
+from paperclip.generators.store import get_location, set_location, build_context_path
 
 @click.command()
 @click.option("--location", required=True)

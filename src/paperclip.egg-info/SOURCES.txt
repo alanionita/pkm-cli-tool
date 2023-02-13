@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/paperclip/__init__.py
+src/paperclip/main.py
+src/paperclip.egg-info/PKG-INFO
+src/paperclip.egg-info/SOURCES.txt
+src/paperclip.egg-info/dependency_links.txt
+src/paperclip.egg-info/entry_points.txt
+src/paperclip.egg-info/not-zip-safe
+src/paperclip.egg-info/requires.txt
+src/paperclip.egg-info/top_level.txt

@@ -1,6 +1,6 @@
 from click.testing import CliRunner
-from pkmcli import main
-from pkmcli.generators.path import get_project_base
+from paperclip import main
+from paperclip.generators.path import get_project_base
 import unittest.mock
 import datetime
 import pytest

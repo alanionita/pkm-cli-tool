@@ -1,7 +1,7 @@
 import click
-from pkmcli.generators import notes
-from pkmcli.generators.store import get_location, build_context_path
-from pkmcli.generators import file
+from paperclip.generators import notes
+from paperclip.generators.store import get_location, build_context_path
+from paperclip.generators import file
 
 CMD_NOTE_TYPES = ['daily', 'project', 'area',
                   'resource', 'archive']

@@ -1,0 +1,2 @@
+[console_scripts]
+paperclip = paperclip.main:cli
